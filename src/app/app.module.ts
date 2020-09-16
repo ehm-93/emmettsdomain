@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatDialogModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCard, MatCardModule, MatDialogModule, MatToolbarModule } from '@angular/material';
 import { ComplaintComponent, ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { ComplaintComponent, ToolbarComponent } from './toolbar/toolbar.componen
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
