@@ -1,11 +1,24 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog, MatDialogState } from '@angular/material';
+import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material';
 
 @Component({
-  template: '<div>I asked nicely :(</div>'
+  template: `
+  <h1 mat-dialog-title>Please apologize</h1>
+  <div mat-dialog-content><p>I asked nicely :(</p></div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onApology()">I'm sorry</button>
+  </div>
+  `
 })
 export class ComplaintComponent {
+  constructor(public dialogRef: MatDialogRef<ComplaintComponent>, public snacks: MatSnackBar) { }
 
+  onApology() {
+    if (this.dialogRef) {
+      this.dialogRef.close();
+      this.snacks.open('I forgive you. <3', 'Best friends');
+    }
+  }
 }
 
 @Component({
