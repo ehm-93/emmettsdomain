@@ -42,19 +42,46 @@ function initExpress() {
   const Visit = mongoose.model('Visit', visitSchema);
 
   app.use((rq: Request, rs: Response, next: () => void) => {
-    ipstack(rq.header('X-Forwarded-For') || rq.ip, ipstackKey, (err: any, ipRs: IpStackResponse) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
+    let ip = rq.ip;
 
-      new Visit({
-        date: new Date(),
-        ip: ipRs.ip,
-        lat: ipRs.latitude,
-        lng: ipRs.longitude
-      }).save();
-    });
+    if (rq.header('X-Forwarded-For')) {
+      ip = rq.header('X-Forwarded-For').split(',')[0];
+    }
+
+    // only log IPs every few minutes to not spam ipstack
+    // TODO: good opportunity for Observable.debounce
+    const interval = 5 * 60_000;
+    Visit.findOne({
+      ip,
+      date: {
+        $gt: new Date(Math.floor(new Date().getTime() / interval) * interval)
+      }
+    },
+      (err, v) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        // do nothing, we already logged this IP recently
+        if (v) {
+          return;
+        }
+
+        ipstack(ip, ipstackKey, (er: any, ipRs: IpStackResponse) => {
+          if (er) {
+            console.error(er);
+            return;
+          }
+
+          new Visit({
+            date: new Date(),
+            ip: ipRs.ip,
+            lat: ipRs.latitude,
+            lng: ipRs.longitude
+          }).save();
+        });
+      });
 
     next();
   });
