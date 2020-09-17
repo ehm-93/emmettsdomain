@@ -42,7 +42,7 @@ function initExpress() {
   const Visit = mongoose.model('Visit', visitSchema);
 
   app.use((rq: Request, rs: Response, next: () => void) => {
-    ipstack(rq.ip, ipstackKey, (err: any, ipRs: IpStackResponse) => {
+    ipstack(rq.header('X-Forwarded-For') || rq.ip, ipstackKey, (err: any, ipRs: IpStackResponse) => {
       if (err) {
         console.error(err);
         return;
