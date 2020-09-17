@@ -5,17 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatCardModule, MatDialogModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
-import { ComplaintComponent, ToolbarComponent } from './toolbar/toolbar.component';
+import { MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { LinkedinLinkComponent } from './linkedin-link/linkedin-link.component';
+import { GithubLinkComponent } from './github-link/github-link.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    ComplaintComponent
-  ],
-  entryComponents: [
-    ComplaintComponent
+    LinkedinLinkComponent,
+    GithubLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,8 @@ import { ComplaintComponent, ToolbarComponent } from './toolbar/toolbar.componen
     MatButtonModule,
     MatDialogModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
