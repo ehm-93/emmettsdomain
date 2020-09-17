@@ -24,7 +24,14 @@ if (!ipstackKey) {
 const app: Express = express();
 
 const mongoose = new Mongoose();
-mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  server: {
+    ssl: true,
+    sslValidate: true
+  }
+})
   .then(initExpress);
 
 function initExpress() {
@@ -54,5 +61,6 @@ function initExpress() {
       }).save();
     });
   });
+
   app.listen(process.env.PORT || 8080);
 }
