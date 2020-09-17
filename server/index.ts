@@ -41,16 +41,12 @@ function initExpress() {
 
   const Visit = mongoose.model('Visit', visitSchema);
 
-  app.use(express.static(path.join(__dirname + '/../dist/app-one')));
-  app.get('/', (rq: Request, rs: Response) => {
-    rs.sendFile(path.join(__dirname + '/../dist/app-one/index.html'));
+  app.use((rq: Request, rs: Response, next: () => void) => {
     ipstack(rq.ip, ipstackKey, (err: any, ipRs: IpStackResponse) => {
       if (err) {
-        console.log(err);
+        console.error(err);
         return;
       }
-
-      console.log(`Recording new visit from lat: ${ipRs.latitude}, lng: ${ipRs.longitude}`);
 
       new Visit({
         date: new Date(),
@@ -59,9 +55,15 @@ function initExpress() {
         lng: ipRs.longitude
       }).save();
     });
+
+    next();
   });
 
-  console.log(`Starting app...`);
+  app.use(express.static(path.join(__dirname + '/../dist/app-one')));
+
+  app.get('/', (rq: Request, rs: Response) =>
+    rs.sendFile(path.join(__dirname + '/../dist/app-one/index.html'))
+  );
 
   app.listen(process.env.PORT || 8080);
 }
