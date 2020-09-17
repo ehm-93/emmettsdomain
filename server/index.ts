@@ -53,6 +53,8 @@ function initExpress() {
         return;
       }
 
+      console.log(`Recording new visit from lat: ${ipRs.longitude}, lng: ${ipRs.longitude}`);
+
       new Visit({
         date: new Date(),
         ip: ipRs.ip,
@@ -61,6 +63,8 @@ function initExpress() {
       }).save();
     });
   });
+
+  console.log(`Starting app...`);
 
   app.listen(process.env.PORT || 8080);
 }
