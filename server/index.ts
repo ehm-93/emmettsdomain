@@ -27,10 +27,8 @@ const mongoose = new Mongoose();
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  server: {
-    ssl: true,
-    sslValidate: true
-  }
+  ssl: true,
+  sslValidate: true
 })
   .then(initExpress);
 
