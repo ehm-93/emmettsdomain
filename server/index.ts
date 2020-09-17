@@ -1,9 +1,9 @@
 import { Express, Request, Response } from 'express';
 import { Mongoose } from 'mongoose';
 
-const express = require('express');
-const path = require('path');
-const ipstack = require('ipstack');
+import express = require('express');
+import path = require('path');
+import ipstack = require('ipstack');
 
 const ipstackKey = process.env.IPSTACK;
 const mongoUri = process.env.MONGO;
@@ -29,8 +29,7 @@ mongoose.connect(mongoUri, {
   useUnifiedTopology: true,
   ssl: true,
   sslValidate: true
-})
-  .then(initExpress);
+}).then(initExpress);
 
 function initExpress() {
   const visitSchema = new mongoose.Schema({
@@ -42,7 +41,7 @@ function initExpress() {
 
   const Visit = mongoose.model('Visit', visitSchema);
 
-  app.use(express.static(__dirname + '/../dist/app-one'));
+  app.use(express.static(path.join(__dirname + '/../dist/app-one')));
   app.get('/', (rq: Request, rs: Response) => {
     rs.sendFile(path.join(__dirname + '/../dist/app-one/index.html'));
     ipstack(rq.ip, ipstackKey, (err: any, ipRs: IpStackResponse) => {
