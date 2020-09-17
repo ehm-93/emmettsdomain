@@ -53,7 +53,7 @@ function initExpress() {
         return;
       }
 
-      console.log(`Recording new visit from lat: ${ipRs.longitude}, lng: ${ipRs.longitude}`);
+      console.log(`Recording new visit from lat: ${ipRs.latitude}, lng: ${ipRs.longitude}`);
 
       new Visit({
         date: new Date(),
