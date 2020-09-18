@@ -14,9 +14,22 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+  <style>
+    .ed-has-fixed-toolbar {
+      padding-top: 64px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .ed-has-fixed-toolbar {
+        padding-top: 56px;
+      }
+    }
+
+  </style>
 </head>
 
-<body>
+<body class="ed-has-fixed-toolbar">
   <app-root></app-root>
 </body>
 
