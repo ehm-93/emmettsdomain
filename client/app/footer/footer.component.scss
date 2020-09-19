@@ -1,1 +1,29 @@
-@import '../../styles.scss';
+@import '../../styles';
+
+.vl {
+  border-right: 1px solid $colorSoft;
+  margin: 0 1em 0 1em;
+}
+
+footer {
+  height: 80px;
+  background-color: $colorSoftest;
+  color: $colorSoft;
+  position: relative;
+  font-size: .75em;
+}
+
+footer a {
+  text-decoration: none;
+  color: $colorSoft;
+}
+
+footer a:hover {
+  color: $colorSofter;
+}
+
+footer .attribution {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

@@ -1,0 +1,115 @@
+@import 'constants';
+
+.ed-columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@for $i from 1 through 12 {
+  .ed-col-#{$i} {
+    width: (100% * $i / 12);
+    padding-left: $colGutter;
+    padding-right: $colGutter;
+    box-sizing: border-box;
+  }
+}
+
+@for $i from 1 through 12 {
+  .ed-col-sm-#{$i} {
+    width: 100%;
+  }
+
+  @media (min-width: $sm) {
+    .ed-col-sm-#{$i} {
+      width: (100% * $i / 12);
+      padding-left: $colGutter;
+      padding-right: $colGutter;
+      box-sizing: border-box;
+    }
+
+    .ed-columns>.ed-col-sm-#{$i}:first-child {
+      width: (100% * $i / 12);
+      padding-left: 0;
+    }
+
+    .ed-columns>.ed-col-sm-#{$i}:last-child {
+      width: (100% * $i / 12);
+      padding-right: 0;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .ed-col-md-#{$i} {
+    width: 100%;
+  }
+
+  @media (min-width: $md) {
+    .ed-col-md-#{$i} {
+      width: (100% * $i / 12);
+      padding-left: $colGutter;
+      padding-right: $colGutter;
+      box-sizing: border-box;
+    }
+
+    .ed-columns>.ed-col-md-#{$i}:first-child {
+      width: (100% * $i / 12);
+      padding-left: 0;
+    }
+
+    .ed-columns>.ed-col-md-#{$i}:last-child {
+      width: (100% * $i / 12);
+      padding-right: 0;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .ed-col-lg-#{$i} {
+    width: 100%;
+  }
+
+  @media (min-width: $lg) {
+    .ed-col-lg-#{$i} {
+      width: (100% * $i / 12);
+      padding-left: $colGutter;
+      padding-right: $colGutter;
+      box-sizing: border-box;
+    }
+
+    .ed-columns>.ed-col-lg-#{$i}:first-child {
+      width: (100% * $i / 12);
+      padding-left: 0;
+    }
+
+    .ed-columns>.ed-col-lg-#{$i}:last-child {
+      width: (100% * $i / 12);
+      padding-right: 0;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .ed-col-xlg-#{$i} {
+    width: 100%;
+  }
+
+  @media (min-width: $lg) {
+    .ed-col-xlg-#{$i} {
+      width: (100% * $i / 12);
+      padding-left: $colGutter;
+      padding-right: $colGutter;
+      box-sizing: border-box;
+    }
+
+    .ed-columns>.ed-col-xlg-#{$i}:first-child {
+      width: (100% * $i / 12);
+      padding-left: 0;
+    }
+
+    .ed-columns>.ed-col-xlg-#{$i}:last-child {
+      width: (100% * $i / 12);
+      padding-right: 0;
+    }
+  }
+}

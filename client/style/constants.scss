@@ -1,0 +1,21 @@
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xlg: 1200px;
+
+$breakpoints: ('sm': $sm,
+  'md': $md,
+  'lg': $lg,
+  'xlg': $xlg);
+
+$pCoef: 0.33em;
+$mCoef: 0.33em;
+
+$colGutter: 16px;
+
+$backgroundPrimary: #3f51b5;
+$colorPrimary: #fff;
+
+$colorSoft: rgba(0, 0, 0, .54);
+$colorSofter: rgba(0, 0, 0, .32);
+$colorSoftest: rgba(0, 0, 0, .10);

@@ -20,7 +20,6 @@ import { LinkedinLinkComponent } from './linkedin-link/linkedin-link.component';
 import { GithubLinkComponent } from './github-link/github-link.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
-import { AttributionComponent } from './attribution/attribution.component';
 import { HomeLinkComponent } from './home-link/home-link.component';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { HomeLinkComponent } from './home-link/home-link.component';
     GithubLinkComponent,
     FooterComponent,
     HeroComponent,
-    AttributionComponent,
     HomeLinkComponent
   ],
   imports: [

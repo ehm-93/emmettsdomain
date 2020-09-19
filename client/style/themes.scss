@@ -1,0 +1,14 @@
+@import 'constants';
+
+.ed-primary {
+  background-color: $backgroundPrimary;
+  color: $colorPrimary;
+}
+
+.ed-soft {
+  color: $colorSoft;
+}
+
+.ed-spacey {
+  line-height: 1.8em;
+}

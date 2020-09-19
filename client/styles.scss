@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'style/constants';
+@import 'style/columns';
+@import 'style/themes';
+@import 'style/layout';
+@import 'style/helpers';
 
 html,
 body {
@@ -8,17 +12,4 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xlg: 1200px;
-
-$backgroundPrimary: #3f51b5;
-$colorPrimary: #fff;
-
-.ed-primary {
-  background-color: $backgroundPrimary;
-  color: $colorPrimary;
 }

@@ -1,0 +1,11 @@
+@import 'constants';
+
+.ed-container {
+  margin: 0 8% 0 8%;
+}
+
+@media (max-width: $sm) {
+  .ed-container {
+    margin: 0;
+  }
+}

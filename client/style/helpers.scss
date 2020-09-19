@@ -1,0 +1,283 @@
+@import 'constants';
+
+/*
+ * Visibility helpers
+ */
+
+@media (max-size: $sm) {
+  .ed-display-none-sm {
+    display: none;
+  }
+}
+
+@media (max-size: $md) {
+  .ed-display-none-md {
+    display: none;
+  }
+}
+
+@media (max-size: $lg) {
+  .ed-display-none-lg {
+    display: none;
+  }
+}
+
+@media (max-size: $xlg) {
+  .ed-display-none-xlg {
+    display: none;
+  }
+}
+
+.ed-display-none {
+  display: none;
+}
+
+/*
+ * Text alignment helpers
+ */
+
+/*
+ * Left
+ */
+
+@media (min-size: $sm) {
+  .ed-align-left-sm {
+    text-align: left;
+  }
+}
+
+@media (min-size: $md) {
+  .ed-align-left-md {
+    text-align: left;
+  }
+}
+
+@media (min-size: $lg) {
+  .ed-align-left-lg {
+    text-align: left;
+  }
+}
+
+@media (min-size: $xlg) {
+  .ed-align-left-xlg {
+    text-align: left;
+  }
+}
+
+.ed-align-left {
+  text-align: left;
+}
+
+/*
+ * Right
+ */
+
+@media (min-size: $sm) {
+  .ed-align-right-sm {
+    text-align: right;
+  }
+}
+
+@media (min-size: $md) {
+  .ed-align-right-md {
+    text-align: right;
+  }
+}
+
+@media (min-size: $lg) {
+  .ed-align-right-lg {
+    text-align: right;
+  }
+}
+
+@media (min-size: $xlg) {
+  .ed-align-right-xlg {
+    text-align: right;
+  }
+}
+
+.ed-align-right {
+  text-align: right;
+}
+
+/*
+ * Center
+ */
+
+@media (min-size: $sm) {
+  .ed-align-center-sm {
+    text-align: center;
+  }
+}
+
+@media (min-size: $md) {
+  .ed-align-center-md {
+    text-align: center;
+  }
+}
+
+@media (min-size: $lg) {
+  .ed-align-center-lg {
+    text-align: center;
+  }
+}
+
+@media (min-size: $xlg) {
+  .ed-align-center-xlg {
+    text-align: center;
+  }
+}
+
+.ed-align-center {
+  text-align: center;
+}
+
+/*
+ * Padding
+ */
+@for $i from 1 to 6 {
+  .ed-p-#{$i} {
+    padding: $pCoef * $i;
+  }
+
+  .ed-pt-#{$i} {
+    padding-top: $pCoef * $i;
+  }
+
+  .ed-pr-#{$i} {
+    padding-right: $pCoef * $i;
+  }
+
+  .ed-pb-#{$i} {
+    padding-bottom: $pCoef * $i;
+  }
+
+  .ed-pl-#{$i} {
+    padding-left: $pCoef * $i;
+  }
+
+  .ed-px-#{$i} {
+    padding-left: $pCoef * $i;
+    padding-right: $pCoef * $i;
+  }
+
+  .ed-py-#{$i} {
+    padding-top: $pCoef *$i;
+    padding-bottom: $pCoef *$i;
+  }
+}
+
+/*
+ * Breakpoint-specific padding, formatted like 'ed-px-sm-3'
+ */
+@each $name,
+$width in $breakpoints {
+  @media (min-width: $width) {
+    @for $i from 1 to 6 {
+      .ed-p-#{$name}-#{$i} {
+        padding: $pCoef * $i;
+      }
+
+      .ed-pt-#{$name}-#{$i} {
+        padding-top: $pCoef * $i;
+      }
+
+      .ed-pr-#{$name}-#{$i} {
+        padding-right: $pCoef * $i;
+      }
+
+      .ed-pb-#{$name}-#{$i} {
+        padding-bottom: $pCoef * $i;
+      }
+
+      .ed-pl-#{$name}-#{$i} {
+        padding-left: $pCoef * $i;
+      }
+
+      .ed-px-#{$name}-#{$i} {
+        padding-left: $pCoef * $i;
+        padding-right: $pCoef * $i;
+      }
+
+      .ed-py-#{$name}-#{$i} {
+        padding-top: $pCoef *$i;
+        padding-bottom: $pCoef *$i;
+      }
+    }
+  }
+}
+
+/*
+ * Margin
+ */
+@for $i from 1 to 6 {
+  .ed-m-#{$i} {
+    margin: $mCoef * $i;
+  }
+
+  .ed-mt-#{$i} {
+    margin-top: $mCoef * $i;
+  }
+
+  .ed-mr-#{$i} {
+    margin-right: $mCoef * $i;
+  }
+
+  .ed-mb-#{$i} {
+    margin-bottom: $mCoef * $i;
+  }
+
+  .ed-ml-#{$i} {
+    margin-left: $mCoef * $i;
+  }
+
+  .ed-mx-#{$i} {
+    margin-left: $mCoef * $i;
+    margin-right: $mCoef * $i;
+  }
+
+  .ed-my-#{$i} {
+    margin-top: $mCoef *$i;
+    margin-bottom: $mCoef *$i;
+  }
+}
+
+/*
+ * Breakpoint-specific margins, formatted like 'ed-mx-sm-3'
+ */
+@each $name,
+$width in $breakpoints {
+  @media (min-width: $width) {
+    @for $i from 1 to 6 {
+      .ed-m-#{$name}-#{$i} {
+        margin: $mCoef * $i;
+      }
+
+      .ed-mt-#{$name}-#{$i} {
+        margin-top: $mCoef * $i;
+      }
+
+      .ed-mr-#{$name}-#{$i} {
+        margin-right: $mCoef * $i;
+      }
+
+      .ed-mb-#{$name}-#{$i} {
+        margin-bottom: $mCoef * $i;
+      }
+
+      .ed-ml-#{$name}-#{$i} {
+        margin-left: $mCoef * $i;
+      }
+
+      .ed-mx-#{$name}-#{$i} {
+        margin-left: $mCoef * $i;
+        margin-right: $mCoef * $i;
+      }
+
+      .ed-my-#{$name}-#{$i} {
+        margin-top: $pCoef *$i;
+        margin-bottom: $pCoef *$i;
+      }
+    }
+  }
+}
