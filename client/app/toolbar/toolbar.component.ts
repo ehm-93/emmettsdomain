@@ -6,7 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
-  @Input() caption: string;
-
   constructor() { }
 }

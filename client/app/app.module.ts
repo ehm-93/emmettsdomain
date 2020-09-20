@@ -13,14 +13,17 @@ import {
   MatIconModule,
   MatSnackBarModule,
   MatToolbarModule,
-  MatListModule
+  MatListModule,
+  MatMenuModule
 } from '@angular/material';
+
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { LinkedinLinkComponent } from './linkedin-link/linkedin-link.component';
 import { GithubLinkComponent } from './github-link/github-link.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeroComponent } from './hero/hero.component';
 import { HomeLinkComponent } from './home-link/home-link.component';
+import { LinkMenuComponent } from './link-menu/link-menu.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { HomeLinkComponent } from './home-link/home-link.component';
     GithubLinkComponent,
     FooterComponent,
     HeroComponent,
-    HomeLinkComponent
+    HomeLinkComponent,
+    LinkMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,8 @@ import { HomeLinkComponent } from './home-link/home-link.component';
     MatSnackBarModule,
     MatIconModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
