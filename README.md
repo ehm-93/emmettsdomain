@@ -1,6 +1,6 @@
 # Emmett's Domain
 
-This is just a quick POC Angular site. See it in action at [Emmett's Domain](https://emmettsdomain.org).
+This is just a quick Angular site. See it in action at [Emmett's Domain](https://emmettsdomain.org).
 
 ## Development server
 
